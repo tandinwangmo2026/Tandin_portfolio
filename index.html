@@ -1,511 +1,395 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Tandin Wangmo | Personal Portfolio</title>
-
-    <!-- CSS -->
+    <meta name="description" content="Personal portfolio of Tandin Wangmo, a Computer System and Network student at Jigme Namgyel Engineering College.">
+    <title>Tandin Wangmo | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-
-    <!-- JavaScript -->
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-    <header class="header">
-
+    <!-- Navigation -->
+    <header>
         <nav class="navbar container">
+            <a href="#home" class="logo">Tandin<span>.</span></a>
 
-            <a href="#home" class="logo">
-                Tandin<span>.</span>
-            </a>
-
-            <button class="menu-toggle"
-                    id="menu-toggle"
+            <button class="menu-toggle" id="menu-toggle"
                     aria-label="Open navigation menu"
                     aria-expanded="false">
                 ☰
             </button>
 
             <ul class="nav-links" id="nav-links">
-
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
-
             </ul>
 
-            <!-- DARK MODE BUTTON -->
-            <button class="theme-toggle"
-                    id="theme-toggle"
-                    aria-label="Switch to dark mode"
-                    title="Toggle dark mode">
+            <button id="theme-toggle" class="theme-toggle"
+                    aria-label="Switch to dark mode">
                 🌙
             </button>
-
         </nav>
-
     </header>
 
+    <main>
 
-    <!-- HOME SECTION -->
-    <section id="home" class="home section">
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
 
-        <div class="container home-container">
+                <div class="hero-text">
+                    <p class="welcome">WELCOME TO MY PORTFOLIO</p>
 
-            <div class="profile-container">
+                    <h1>Hello, I'm <span>Tandin Wangmo</span></h1>
 
-                <img
-                    src="Images/k.jpg"
-                    alt="Profile photo of Tandin Wangmo"
-                    class="profile-picture"
-                >
+                    <h2>Computer System and Network Student</h2>
+
+                    <p>
+                        Welcome to my personal portfolio. Here you can learn
+                        about my background, education, technical skills,
+                        and Coursera certificates.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#about" class="btn">About Me</a>
+                        <a href="#contact" class="btn btn-outline">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img src="Images/k.jpg"
+                         alt="Tandin Wangmo profile picture">
+                </div>
 
             </div>
+        </section>
 
-            <div class="home-content">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
 
-                <p class="welcome">
-                    WELCOME TO MY PORTFOLIO
-                </p>
-
-                <h1>
-                    Hi, I'm <span>Tandin Wangmo</span>
-                </h1>
-
-                <h2>
-                    Computer System and Network Student
+                <h2 class="section-title">
+                    About <span>Me</span>
                 </h2>
 
-                <p>
-                    I am a student interested in technology,
-                    web development, computer systems, and networking.
-                </p>
-
-                <p>
-                    I enjoy learning new skills and exploring
-                    how technology can solve real-world problems.
-                </p>
-
-                <a href="#about" class="btn">
-                    Discover More
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                About <span>Me</span>
-            </h2>
-
-            <div class="about-content">
-
-                <p>
-                    My name is Tandin Wangmo. I am studying
-                    Computer System and Network.
-                </p>
-
-                <p>
-                    I am interested in learning about computers,
-                    networking, and website development.
-                </p>
-
-                <p>
-                    I enjoy improving my technical skills,
-                    working with others, and learning new things.
-                </p>
-
-                <p>
-                    My goal is to become more confident in
-                    technology and develop useful projects
-                    through practice.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SKILLS SECTION -->
-    <section id="skills" class="section section-alt">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                My <span>Skills</span>
-            </h2>
-
-            <p class="section-description">
-                These are some of the skills I have learned
-                and am continuing to develop.
-            </p>
-
-            <div class="skills-grid">
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">🌐</div>
-
-                    <h3>HTML</h3>
-
+                <div class="about-card">
                     <p>
-                        Creating the structure and content
-                        of web pages.
+                        My name is Tandin Wangmo. I am a student studying
+                        Computer System and Network at Jigme Namgyel
+                        Engineering College (JNEC).
                     </p>
 
-                </div>
-
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">🎨</div>
-
-                    <h3>CSS</h3>
-
                     <p>
-                        Designing websites with colors,
-                        layouts, and responsive styles.
+                        I am interested in technology, computers,
+                        networking, and learning new digital skills.
+                        I enjoy developing my knowledge of computer systems
+                        and exploring how technology can solve problems.
                     </p>
 
-                </div>
-
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">💬</div>
-
-                    <h3>Communication</h3>
-
                     <p>
-                        Sharing ideas and communicating
-                        clearly with others.
+                        This portfolio presents my educational background,
+                        technical skills, and certificates as I continue
+                        developing my knowledge and experience.
                     </p>
 
-                </div>
-
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">💻</div>
-
-                    <h3>Computer Systems</h3>
-
-                    <p>
-                        Learning about computer hardware,
-                        software, and system fundamentals.
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">🔌</div>
-
-                    <h3>Networking</h3>
-
-                    <p>
-                        Learning network concepts and
-                        how computers communicate.
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">🤝</div>
-
-                    <h3>Teamwork</h3>
-
-                    <p>
-                        Working with others and learning
-                        through collaboration.
-                    </p>
-
+                    <div class="personal-info">
+                        <p><strong>Name:</strong> Tandin Wangmo</p>
+                        <p><strong>Student ID:</strong> 05250196</p>
+                        <p><strong>College:</strong> JNEC</p>
+                        <p>
+                            <strong>Course:</strong>
+                            Computer System and Network
+                        </p>
+                    </div>
                 </div>
 
             </div>
+        </section>
 
-        </div>
+        <!-- Education Section -->
+        <section id="education" class="section section-alt">
+            <div class="container">
 
-    </section>
+                <h2 class="section-title">
+                    My <span>Education</span>
+                </h2>
 
+                <div class="info-card">
+                    <div class="card-icon">🎓</div>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="section">
+                    <h3>Jigme Namgyel Engineering College</h3>
 
-        <div class="container">
-
-            <h2 class="section-title">
-                My <span>Projects</span>
-            </h2>
-
-            <p class="section-description">
-                Here are three projects that represent
-                my learning and practice.
-            </p>
-
-            <div class="projects-grid">
-
-
-                <article class="project-card">
-
-                    <div class="project-number">01</div>
-
-                    <h3>Personal Portfolio Website</h3>
-
-                    <p>
-                        A personal website created using
-                        HTML, CSS, and JavaScript to introduce
-                        myself and display my skills,
-                        projects, and education.
+                    <p class="education-subtitle">
+                        Computer System and Network
                     </p>
 
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
+                    <p>
+                        I am currently studying at Jigme Namgyel Engineering
+                        College (JNEC), pursuing Computer System and Network.
+                    </p>
+
+                    <p>
+                        Through my studies, I am developing my knowledge of
+                        computer systems, networking, hardware, software,
+                        and information technology.
+                    </p>
+
+                    <p>
+                        I am also learning about network connectivity,
+                        troubleshooting, and web development while
+                        improving my technical and problem-solving skills.
+                    </p>
+
+                    <p>
+                        My goal is to strengthen my IT knowledge, gain
+                        practical experience, and prepare for future
+                        opportunities in the field of computer systems
+                        and networking.
+                    </p>
+
+                    <div class="personal-info">
+                        <p>
+                            <strong>College:</strong>
+                            Jigme Namgyel Engineering College
+                        </p>
+                        <p>
+                            <strong>Course:</strong>
+                            Computer System and Network
+                        </p>
+                        <p>
+                            <strong>Student ID:</strong> 05250196
+                        </p>
+                        <p>
+                            <strong>Interest:</strong> IT and Networking
+                        </p>
                     </div>
 
-                </article>
-
-
-                <article class="project-card">
-
-                    <div class="project-number">02</div>
-
-                    <h3>Student Information Website</h3>
-
-                    <p>
-                        A practice website designed to
-                        organize and display student
-                        information using a simple
-                        webpage layout.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                    </div>
-
-                </article>
-
-
-                <article class="project-card">
-
-                    <div class="project-number">03</div>
-
-                    <h3>Computer Networking Project</h3>
-
-                    <p>
-                        A learning project focused on
-                        basic networking concepts and
-                        understanding how devices
-                        connect and communicate.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>Networking</span>
-                        <span>Computer Systems</span>
-                    </div>
-
-                </article>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- EDUCATION SECTION -->
-    <section id="education" class="section section-alt">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                My <span>Education</span>
-            </h2>
-
-            <div class="education-card">
-
-                <div class="education-icon">
-                    🎓
                 </div>
 
-                <div class="education-details">
+            </div>
+        </section>
 
-                    <h3>Computer System and Network</h3>
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
 
-                    <p class="education-level">
-                        Student
-                    </p>
+                <h2 class="section-title">
+                    My <span>Skills</span>
+                </h2>
 
-                    <p>
-                        Studying computer systems,
-                        networking, and web development
-                        fundamentals.
-                    </p>
+                <p class="section-description">
+                    Skills I am learning and developing.
+                </p>
+
+                <div class="skills-grid">
+
+                    <div class="skill-card">
+                        <span class="skill-icon">💻</span>
+                        <h3>Computer Basics</h3>
+                        <p>
+                            Understanding computer systems and applications.
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <span class="skill-icon">🌐</span>
+                        <h3>Networking</h3>
+                        <p>
+                            Learning computer networks and connectivity.
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <span class="skill-icon">⌨️</span>
+                        <h3>Web Development</h3>
+                        <p>
+                            Learning HTML, CSS, and JavaScript.
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <span class="skill-icon">🔧</span>
+                        <h3>Troubleshooting</h3>
+                        <p>
+                            Learning to identify and solve technical issues.
+                        </p>
+                    </div>
 
                 </div>
 
             </div>
+        </section>
 
-        </div>
+        <!-- Coursera Certificates Section -->
+        <section id="certificates" class="section section-alt">
+            <div class="container">
 
-    </section>
+                <h2 class="section-title">
+                    My <span>Certificates</span>
+                </h2>
 
+                <p class="section-description">
+                    Here are the certificates I have earned through Coursera.
+                    Click a certificate image to view it in full size.
+                </p>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="section">
+                <div class="certificates-grid">
 
-        <div class="container">
+                    <!-- Certificate 1 -->
+                    <article class="certificate-card">
 
-            <h2 class="section-title">
-                Contact <span>Me</span>
-            </h2>
+                        <a href="Images/CourseraSRV.png"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Open Coursera SRV certificate">
 
-            <p class="section-description">
-                If you would like to contact me,
-                you can send a message using the form below.
-            </p>
+                            <img
+                                src="Images/CourseraSRV.png"
+                                alt="Coursera SRV certificate"
+                                class="certificate-image">
+                        </a>
 
-            <div class="contact-container">
+                        <div class="certificate-content">
+                            <div class="card-icon">🏆</div>
 
+                            <h3>Coursera Certificate - SRV</h3>
 
-                <div class="contact-info">
+                            <p>
+                                Certificate of course completion.
+                            </p>
+
+                            <a href="Images/CourseraSRV.png"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="btn">
+                                View Certificate
+                            </a>
+                        </div>
+
+                    </article>
+
+                    <!-- Certificate 2 -->
+                    <article class="certificate-card">
+
+                        <a href="Images/CourseraSYD1.png"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Open Coursera SYD1 certificate">
+
+                            <img
+                                src="Images/CourseraSYD1.png"
+                                alt="Coursera SYD1 certificate"
+                                class="certificate-image">
+                        </a>
+
+                        <div class="certificate-content">
+                            <div class="card-icon">🏆</div>
+
+                            <h3>Coursera Certificate - SYD1</h3>
+
+                            <p>
+                                Certificate of course completion.
+                            </p>
+
+                            <a href="Images/CourseraSYD1.png"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="btn">
+                                View Certificate
+                            </a>
+                        </div>
+
+                    </article>
+
+                    <!-- Certificate 3 -->
+                    <article class="certificate-card">
+
+                        <a href="Images/CourseraSYD2.png"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Open Coursera SYD2 certificate">
+
+                            <img
+                                src="Images/CourseraSYD2.png"
+                                alt="Coursera SYD2 certificate"
+                                class="certificate-image">
+                        </a>
+
+                        <div class="certificate-content">
+                            <div class="card-icon">🏆</div>
+
+                            <h3>Coursera Certificate - SYD2</h3>
+
+                            <p>
+                                Certificate of course completion.
+                            </p>
+
+                            <a href="Images/CourseraSYD2.png"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="btn">
+                                View Certificate
+                            </a>
+                        </div>
+
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+
+                <h2 class="section-title">
+                    Contact <span>Me</span>
+                </h2>
+
+                <p class="section-description">
+                    Thank you for visiting my portfolio.
+                </p>
+
+                <div class="info-card contact-card">
+                    <div class="card-icon">✉️</div>
 
                     <h3>Let's Connect</h3>
 
                     <p>
-                        Thank you for visiting my portfolio.
-                        I welcome messages about learning,
-                        projects, and technology.
+                        You can contact me by email for questions,
+                        collaboration, or professional opportunities.
                     </p>
 
-                    <div class="contact-item">
-
-                        <span>📧</span>
-
-                        <p>
-                            Email: Add your email address
-                        </p>
-
-                    </div>
-
-                    <div class="contact-item">
-
-                        <span>🎓</span>
-
-                        <p>
-                            Course: Computer System and Network
-                        </p>
-
-                    </div>
-
+                    <!-- Replace this with your actual email address -->
+                    <a href="mailto:your-email@example.com" class="btn">
+                        Email Me
+                    </a>
                 </div>
 
-
-                <form id="contact-form" class="contact-form">
-
-                    <label for="name">
-                        Your Name
-                    </label>
-
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Enter your name"
-                        required
-                    >
-
-
-                    <label for="email">
-                        Your Email
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        required
-                    >
-
-
-                    <label for="message">
-                        Your Message
-                    </label>
-
-                    <textarea
-                        id="message"
-                        name="message"
-                        rows="5"
-                        placeholder="Write your message"
-                        required
-                    ></textarea>
-
-
-                    <button type="submit" class="btn">
-                        Send Message
-                    </button>
-
-                    <p
-                        id="form-message"
-                        class="form-message"
-                        aria-live="polite">
-                    </p>
-
-                </form>
-
             </div>
+        </section>
 
-        </div>
+    </main>
 
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer class="footer">
-
+    <!-- Footer -->
+    <footer>
         <div class="container">
-
             <p>
-                © <span id="year"></span>
-                Tandin Wangmo. Personal Portfolio.
+                &copy; <span id="year"></span> Tandin Wangmo.
+                All rights reserved.
             </p>
-
-            <a href="#home">
-                Back to Top ↑
-            </a>
-
         </div>
-
     </footer>
 
 </body>
-
 </html>

@@ -1,214 +1,55 @@
 
-// =========================
-// MOBILE NAVIGATION
-// =========================
-
-const menuToggle = document.getElementById("menu-toggle");
-
-const navLinks = document.getElementById("nav-links");
-
-
-if (menuToggle && navLinks) {
-
-    menuToggle.addEventListener("click", function () {
-
-        navLinks.classList.toggle("show");
-
-        const isOpen = navLinks.classList.contains("show");
-
-        menuToggle.setAttribute("aria-expanded", isOpen);
-
-        menuToggle.textContent = isOpen ? "✕" : "☰";
-
-    });
-
-
-    // Close menu when a navigation link is clicked
-
-    const navigationItems = navLinks.querySelectorAll("a");
-
-    navigationItems.forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            navLinks.classList.remove("show");
-
-            menuToggle.setAttribute("aria-expanded", "false");
-
-            menuToggle.textContent = "☰";
-
-        });
-
-    });
-
-}
-
-
-// =========================
-// DARK MODE
-// =========================
+/* =========================
+   DARK MODE
+========================= */
 
 const themeToggle = document.getElementById("theme-toggle");
 
+themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
 
-// Apply saved theme when the page loads
+    const isDarkMode = document.body.classList.contains("dark-mode");
 
-function applyTheme(theme) {
+    themeToggle.textContent = isDarkMode ? "☀️" : "🌙";
 
-    const darkModeEnabled = theme === "dark";
+    themeToggle.setAttribute(
+        "aria-label",
+        isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+    );
+});
 
-    document.body.classList.toggle("dark-mode", darkModeEnabled);
+/* =========================
+   MOBILE NAVIGATION MENU
+========================= */
 
-    if (themeToggle) {
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
 
-        themeToggle.textContent = darkModeEnabled ? "☀️" : "🌙";
+menuToggle.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("show");
 
-        themeToggle.setAttribute(
-            "aria-label",
-            darkModeEnabled
-                ? "Switch to light mode"
-                : "Switch to dark mode"
-        );
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+});
 
-        themeToggle.setAttribute(
-            "title",
-            darkModeEnabled
-                ? "Switch to light mode"
-                : "Switch to dark mode"
-        );
+/* Close the mobile menu after selecting a link */
 
-    }
-
-}
-
-
-// Read saved theme
-
-let savedTheme = "light";
-
-try {
-
-    savedTheme = localStorage.getItem("portfolio-theme") || "light";
-
-} catch (error) {
-
-    savedTheme = "light";
-
-}
-
-
-// Apply theme
-
-applyTheme(savedTheme);
-
-
-// Change theme when button is clicked
-
-if (themeToggle) {
-
-    themeToggle.addEventListener("click", function () {
-
-        const darkModeEnabled =
-            document.body.classList.contains("dark-mode");
-
-        const newTheme = darkModeEnabled ? "light" : "dark";
-
-        applyTheme(newTheme);
-
-
-        // Save theme selection
-
-        try {
-
-            localStorage.setItem("portfolio-theme", newTheme);
-
-        } catch (error) {
-
-            // Theme still works if browser storage is unavailable
-
-        }
-
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("show");
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
     });
+});
 
-}
+/* =========================
+   AUTOMATIC FOOTER YEAR
+========================= */
 
-
-// =========================
-// FOOTER YEAR
-// =========================
-
-const yearElement = document.getElementById("year");
-
-if (yearElement) {
-
-    yearElement.textContent = new Date().getFullYear();
-
-}
-
-
-// =========================
-// CONTACT FORM
-// =========================
-
-const contactForm = document.getElementById("contact-form");
-
-const formMessage = document.getElementById("form-message");
-
-
-if (contactForm && formMessage) {
-
-    contactForm.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
-
-        // Get form values
-
-        const name = document.getElementById("name").value.trim();
-
-        const email = document.getElementById("email").value.trim();
-
-        const message = document.getElementById("message").value.trim();
-
-
-        // Check empty fields
-
-        if (name === "" || email === "" || message === "") {
-
-            formMessage.textContent =
-                "Please fill in all the fields.";
-
-            return;
-
-        }
-
-
-        // Check email format
-
-        const emailPattern =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailPattern.test(email)) {
-
-            formMessage.textContent =
-                "Please enter a valid email address.";
-
-            return;
-
-        }
-
-
-        // Show successful validation
-
-        formMessage.textContent =
-            "Thank you, " + name +
-            "! Your form has been checked successfully.";
-
-
-        // Clear form
-
-        contactForm.reset();
-
-    });
-
-}
+document.getElementById("year").textContent =
+    new Date().getFullYear();
