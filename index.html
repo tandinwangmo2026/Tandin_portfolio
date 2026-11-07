@@ -1,394 +1,579 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal portfolio of Tandin Wangmo, a Computer System and Network student at Jigme Namgyel Engineering College.">
-    <title>Tandin Wangmo | Portfolio</title>
+    <title>TANDIN.OS | System Interface</title>
+
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <header>
-        <nav class="navbar container">
-            <a href="#home" class="logo">Tandin<span>.</span></a>
+    <!-- BOOT SEQUENCE OVERLAY -->
+    <div id="boot-screen">
+        <div class="boot-text">
+            <p>> INITIALIZING TANDIN.OS v2.0...</p>
+            <p>> LOADING KERNEL MODULES... [OK]</p>
+            <p>> MOUNTING FILE SYSTEM... [OK]</p>
+            <p>> ESTABLISHING SECURE CONNECTION... [OK]</p>
+            <p class="boot-success">> ACCESS GRANTED. WELCOME USER.</p>
+        </div>
+    </div>
 
-            <button class="menu-toggle" id="menu-toggle"
-                    aria-label="Open navigation menu"
-                    aria-expanded="false">
-                ☰
-            </button>
+    <div class="matrix-overlay" id="grid-bg"></div>
 
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <!-- MAINFRAME HEADER -->
+    <header class="mainframe-header">
+        <a class="sys-identity" href="#home" data-open="home">
+            <b>T.</b> TANDIN.OS
+        </a>
 
-            <button id="theme-toggle" class="theme-toggle"
-                    aria-label="Switch to dark mode">
-                🌙
-            </button>
-        </nav>
+        <div class="network-status">
+            <i></i> SYS_ONLINE // PING: <span id="ping-val">12ms</span>
+        </div>
+
+        <div class="header-controls">
+            <strong id="clock">00:00:00</strong>
+            <button id="theme">☼</button>
+            <button id="menu-toggle">☰</button>
+        </div>
     </header>
 
-    <main>
+    <!-- System Info Strip -->
+    <div class="info-strip">
+        <span>● WORKSTATION: <span id="sys-os">UNKNOWN</span></span>
+        <span>USER: TANDIN WANGMO</span>
+        <span>RES: <span id="sys-res">0x0</span></span>
+    </div>
 
-        <!-- Home Section -->
-        <section id="home" class="hero">
-            <div class="container hero-content">
+    <!-- SIDE NAVIGATION DECK -->
+    <nav class="nav-deck" id="navigation">
+        <button class="nav-node active" data-open="home">01 Home</button>
+        <button class="nav-node" data-open="about">02 About</button>
+        <button class="nav-node" data-open="education">03 Education</button>
+        <button class="nav-node" data-open="skills">04 Skills</button>
+        <button class="nav-node" data-open="network">05 Network Lab</button>
+        <button class="nav-node" data-open="projects">06 Projects</button>
+        <button class="nav-node" data-open="certificates">07 Certificates</button>
+        <button class="nav-node" data-open="contact">08 Contact</button>
+    </nav>
 
-                <div class="hero-text">
-                    <p class="welcome">WELCOME TO MY PORTFOLIO</p>
+    <!-- MAIN VIEWPORT -->
+    <main class="main-viewport">
 
-                    <h1>Hello, I'm <span>Tandin Wangmo</span></h1>
+        <div class="viewport-header">
+            <div>
+                <small>DIGITAL PROFILE ENVIRONMENT</small>
+                <h1 id="screen-title">WELCOME HOME</h1>
+            </div>
+            <span id="screen-number">SCREEN 01 / 08</span>
+        </div>
 
-                    <h2>Computer System and Network Student</h2>
+        <!-- HOME MODULE -->
+        <section class="view-module active" id="home"
+            data-title="WELCOME HOME" data-number="01">
 
-                    <p>
-                        Welcome to my personal portfolio. Here you can learn
-                        about my background, education, technical skills,
-                        and Coursera certificates.
+            <div class="hero-layout">
+
+                <div class="hero-content">
+                    <p class="console-prompt" id="typewriter">$ whoami</p>
+
+                    <small class="accent-text">HELLO, WORLD. I'M</small>
+
+                    <h2 class="glitch-text" data-text="Tandin">Tandin<br><em>Wangmo.</em></h2>
+
+                    <h3>Computer System & Network Student</h3>
+
+                    <p class="bio-text">
+                        Curious about how technology connects people,
+                        devices, and ideas. I am learning to build,
+                        configure, and understand the digital systems
+                        behind our connected world.
                     </p>
 
-                    <div class="hero-buttons">
-                        <a href="#about" class="btn">About Me</a>
-                        <a href="#contact" class="btn btn-outline">
+                    <div class="action-cluster">
+                        <button class="btn-primary" data-open="about">
+                            Explore My Profile ↗
+                        </button>
+
+                        <button class="btn-secondary" data-open="contact">
                             Contact Me
-                        </a>
+                        </button>
                     </div>
+
+                    <p class="status-line">
+                        ● CURRENTLY LEARNING: NETWORKING · WEB DEVELOPMENT
+                    </p>
                 </div>
 
-                <div class="hero-image">
-                    <img src="Images/k.jpg"
-                         alt="Tandin Wangmo profile picture">
-                </div>
-
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-
-                <h2 class="section-title">
-                    About <span>Me</span>
-                </h2>
-
-                <div class="about-card">
-                    <p>
-                        My name is Tandin Wangmo. I am a student studying
-                        Computer System and Network at Jigme Namgyel
-                        Engineering College (JNEC).
-                    </p>
-
-                    <p>
-                        I am interested in technology, computers,
-                        networking, and learning new digital skills.
-                        I enjoy developing my knowledge of computer systems
-                        and exploring how technology can solve problems.
-                    </p>
-
-                    <p>
-                        This portfolio presents my educational background,
-                        technical skills, and certificates as I continue
-                        developing my knowledge and experience.
-                    </p>
-
-                    <div class="personal-info">
-                        <p><strong>Name:</strong> Tandin Wangmo</p>
-                        <p><strong>Student ID:</strong> 05250196</p>
-                        <p><strong>College:</strong> JNEC</p>
-                        <p>
-                            <strong>Course:</strong>
-                            Computer System and Network
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="section section-alt">
-            <div class="container">
-
-                <h2 class="section-title">
-                    My <span>Education</span>
-                </h2>
-
-                <div class="info-card">
-                    <div class="card-icon">🎓</div>
-
-                    <h3>Jigme Namgyel Engineering College</h3>
-
-                    <p class="education-subtitle">
-                        Computer System and Network
-                    </p>
-
-                    <p>
-                        I am currently studying at Jigme Namgyel Engineering
-                        College (JNEC), pursuing Computer System and Network.
-                    </p>
-
-                    <p>
-                        Through my studies, I am developing my knowledge of
-                        computer systems, networking, hardware, software,
-                        and information technology.
-                    </p>
-
-                    <p>
-                        I am also learning about network connectivity,
-                        troubleshooting, and web development while
-                        improving my technical and problem-solving skills.
-                    </p>
-
-                    <p>
-                        My goal is to strengthen my IT knowledge, gain
-                        practical experience, and prepare for future
-                        opportunities in the field of computer systems
-                        and networking.
-                    </p>
-
-                    <div class="personal-info">
-                        <p>
-                            <strong>College:</strong>
-                            Jigme Namgyel Engineering College
-                        </p>
-                        <p>
-                            <strong>Course:</strong>
-                            Computer System and Network
-                        </p>
-                        <p>
-                            <strong>Student ID:</strong> 05250196
-                        </p>
-                        <p>
-                            <strong>Interest:</strong> IT and Networking
-                        </p>
+                <div class="avatar-zone">
+                    <div class="avatar-header">
+                        <span>USER PROFILE / 001</span>
+                        <span class="online-indicator">● LIVE</span>
                     </div>
 
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="container">
-
-                <h2 class="section-title">
-                    My <span>Skills</span>
-                </h2>
-
-                <p class="section-description">
-                    Skills I am learning and developing.
-                </p>
-
-                <div class="skills-grid">
-
-                    <div class="skill-card">
-                        <span class="skill-icon">💻</span>
-                        <h3>Computer Basics</h3>
-                        <p>
-                            Understanding computer systems and applications.
-                        </p>
-                    </div>
-
-                    <div class="skill-card">
-                        <span class="skill-icon">🌐</span>
-                        <h3>Networking</h3>
-                        <p>
-                            Learning computer networks and connectivity.
-                        </p>
-                    </div>
-
-                    <div class="skill-card">
-                        <span class="skill-icon">⌨️</span>
-                        <h3>Web Development</h3>
-                        <p>
-                            Learning HTML, CSS, and JavaScript.
-                        </p>
-                    </div>
-
-                    <div class="skill-card">
-                        <span class="skill-icon">🔧</span>
-                        <h3>Troubleshooting</h3>
-                        <p>
-                            Learning to identify and solve technical issues.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Coursera Certificates Section -->
-        <section id="certificates" class="section section-alt">
-            <div class="container">
-
-                <h2 class="section-title">
-                    My <span>Certificates</span>
-                </h2>
-
-                <p class="section-description">
-                    Here are the certificates I have earned through Coursera.
-                    Click a certificate image to view it in full size.
-                </p>
-
-                <div class="certificates-grid">
-
-                    <!-- Certificate 1 -->
-                    <article class="certificate-card">
-
-                        <a href="Images/CourseraSRV.png"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           aria-label="Open Coursera SRV certificate">
-
-                            <img
-                                src="Images/CourseraSRV.png"
-                                alt="Coursera SRV certificate"
-                                class="certificate-image">
-                        </a>
-
-                        <div class="certificate-content">
-                            <div class="card-icon">🏆</div>
-
-                            <h3>Coursera Certificate - SRV</h3>
-
-                            <p>
-                                Certificate of course completion.
-                            </p>
-
-                            <a href="Images/CourseraSRV.png"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="btn">
-                                View Certificate
-                            </a>
+                    <!-- CIRCULAR AVATAR -->
+                    <div class="avatar-ring">
+                        <div class="avatar-frame">
+                            <img src="Images/k.jpg" alt="Tandin Wangmo">
                         </div>
+                        <div class="scanline"></div>
+                    </div>
 
-                    </article>
+                    <div class="avatar-footer">
+                        <b>TANDIN WANGMO</b>
+                        <small>STUDENT · JNEC</small>
+                    </div>
 
-                    <!-- Certificate 2 -->
-                    <article class="certificate-card">
-
-                        <a href="Images/CourseraSYD1.png"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           aria-label="Open Coursera SYD1 certificate">
-
-                            <img
-                                src="Images/CourseraSYD1.png"
-                                alt="Coursera SYD1 certificate"
-                                class="certificate-image">
-                        </a>
-
-                        <div class="certificate-content">
-                            <div class="card-icon">🏆</div>
-
-                            <h3>Coursera Certificate - SYD1</h3>
-
-                            <p>
-                                Certificate of course completion.
-                            </p>
-
-                            <a href="Images/CourseraSYD1.png"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="btn">
-                                View Certificate
-                            </a>
-                        </div>
-
-                    </article>
-
-                    <!-- Certificate 3 -->
-                    <article class="certificate-card">
-
-                        <a href="Images/CourseraSYD2.png"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           aria-label="Open Coursera SYD2 certificate">
-
-                            <img
-                                src="Images/CourseraSYD2.png"
-                                alt="Coursera SYD2 certificate"
-                                class="certificate-image">
-                        </a>
-
-                        <div class="certificate-content">
-                            <div class="card-icon">🏆</div>
-
-                            <h3>Coursera Certificate - SYD2</h3>
-
-                            <p>
-                                Certificate of course completion.
-                            </p>
-
-                            <a href="Images/CourseraSYD2.png"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="btn">
-                                View Certificate
-                            </a>
-                        </div>
-
-                    </article>
-
+                    <div class="hud-tag tag-top">● SYSTEMS THINKER</div>
+                    <div class="hud-tag tag-bottom">⌘ LEARNING MODE: ON</div>
                 </div>
+
+            </div>
+
+            <div class="metrics-bar">
+                <div><b>08</b><small>PROFILE SCREENS</small></div>
+                <div><b>03</b><small>CERTIFICATE IMAGES</small></div>
+                <div><b>∞</b><small>ROOM TO LEARN</small></div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
+        <!-- ABOUT MODULE -->
+        <section class="view-module" id="about"
+            data-title="ABOUT ME" data-number="02">
 
-                <h2 class="section-title">
-                    Contact <span>Me</span>
-                </h2>
-
-                <p class="section-description">
-                    Thank you for visiting my portfolio.
+            <div class="module-intro">
+                <small>01 / USER INFORMATION</small>
+                <h2>More than a <em>username.</em></h2>
+                <p>
+                    I am a student who enjoys exploring technology
+                    and learning how computer systems and networks work.
                 </p>
+            </div>
 
-                <div class="info-card contact-card">
-                    <div class="card-icon">✉️</div>
+            <div class="split-layout">
 
-                    <h3>Let's Connect</h3>
+                <article class="data-card">
+                    <label>BIO.TXT</label>
+                    <h3>A Little About Me</h3>
 
                     <p>
-                        You can contact me by email for questions,
-                        collaboration, or professional opportunities.
+                        My name is Tandin Wangmo, and I am from
+                        Dumgmin, Pemagatshel, Bhutan. I am currently
+                        studying Computer System and Network at
+                        Jigme Namgyel Engineering College.
                     </p>
 
-                    <!-- Replace this with your actual email address -->
-                    <a href="mailto:your-email@example.com" class="btn">
-                        Email Me
+                    <p>
+                        I am interested in computer networking,
+                        system administration, and web development.
+                        I enjoy learning through practical activities
+                        and improving my technical skills.
+                    </p>
+
+                    <blockquote>
+                        "Every connection starts with curiosity."
+                    </blockquote>
+                </article>
+
+                <article class="data-card">
+                    <label>USER_DETAILS</label>
+
+                    <div class="data-row">
+                        <span>FULL NAME</span>
+                        <b>Tandin Wangmo</b>
+                    </div>
+
+                    <div class="data-row">
+                        <span>STUDENT ID</span>
+                        <b>05250196</b>
+                    </div>
+
+                    <div class="data-row">
+                        <span>LOCATION</span>
+                        <b>Dumgmin, Pemagatshel</b>
+                    </div>
+
+                    <div class="data-row">
+                        <span>COUNTRY</span>
+                        <b>Bhutan</b>
+                    </div>
+
+                    <div class="data-row">
+                        <span>PROGRAM</span>
+                        <b>Computer System and Network</b>
+                    </div>
+
+                    <div class="data-row">
+                        <span>COLLEGE</span>
+                        <b>JNEC</b>
+                    </div>
+                </article>
+
+            </div>
+
+            <article class="data-card goal-card">
+                <div>
+                    <label>MISSION STATEMENT</label>
+                    <h3>My Career Goal</h3>
+
+                    <p>
+                        My goal is to develop strong knowledge in
+                        computer networking and system administration,
+                        gain hands-on experience, and become a skilled
+                        IT professional who can help build reliable
+                        and secure technology solutions.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- EDUCATION MODULE -->
+        <section class="view-module" id="education"
+            data-title="EDUCATION LOG" data-number="03">
+
+            <div class="module-intro">
+                <small>02 / LEARNING HISTORY</small>
+                <h2>My Education <em>Journey.</em></h2>
+                <p>Each stage has helped me build my foundation.</p>
+            </div>
+
+            <div class="history-track">
+
+                <article class="track-node">
+                    <b>01</b>
+                    <div class="data-card">
+                        <small>CURRENT STUDY</small>
+                        <h3>Jigme Namgyel Engineering College</h3>
+                        <strong>Computer System and Network</strong>
+                        <p>Currently studying computer systems and networking.</p>
+                        <tag>IN PROGRESS</tag>
+                    </div>
+                </article>
+
+                <article class="track-node">
+                    <b>02</b>
+                    <div class="data-card">
+                        <small>CLASS 12</small>
+                        <h3>Karma Academy</h3>
+                        <p>Completed higher secondary education.</p>
+                        <tag class="done">COMPLETED</tag>
+                    </div>
+                </article>
+
+                <article class="track-node">
+                    <b>03</b>
+                    <div class="data-card">
+                        <small>SCHOOL EDUCATION</small>
+                        <h3>Yurung Central School</h3>
+                        <p>Continued my school education.</p>
+                        <tag class="done">COMPLETED</tag>
+                    </div>
+                </article>
+
+                <article class="track-node">
+                    <b>04</b>
+                    <div class="data-card">
+                        <small>PRIMARY EDUCATION</small>
+                        <h3>Dumgmin</h3>
+                        <p>Started my educational journey.</p>
+                        <tag class="done">COMPLETED</tag>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SKILLS MODULE -->
+        <section class="view-module" id="skills"
+            data-title="SKILL DATABASE" data-number="04">
+
+            <div class="module-intro">
+                <small>03 / TECHNICAL ABILITIES</small>
+                <h2>Skills Under <em>Development.</em></h2>
+                <p>Areas I have started learning and continue to practise.</p>
+            </div>
+
+            <div class="data-grid">
+
+                <article class="data-card skill-node">
+                    <div class="skill-glyph">⌘</div>
+                    <label>01 / NETWORKING</label>
+                    <h3>Computer Networking</h3>
+                    <p>Learning network fundamentals, IP addressing and network devices.</p>
+                    <div class="tag-group">
+                        <span>IP ADDRESSING</span>
+                        <span>NETWORK DEVICES</span>
+                        <span>DHCP</span>
+                    </div>
+                </article>
+
+                <article class="data-card skill-node">
+                    <div class="skill-glyph">&lt;/&gt;</div>
+                    <label>02 / DEVELOPMENT</label>
+                    <h3>Web Development</h3>
+                    <p>Building simple and responsive websites.</p>
+                    <div class="tag-group">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JAVASCRIPT</span>
+                    </div>
+                </article>
+
+                <article class="data-card skill-node">
+                    <div class="skill-glyph">▤</div>
+                    <label>03 / SYSTEMS</label>
+                    <h3>Computer Systems</h3>
+                    <p>Exploring computer hardware and operating systems.</p>
+                    <div class="tag-group">
+                        <span>WINDOWS</span>
+                        <span>COMPUTER BASICS</span>
+                    </div>
+                </article>
+
+                <article class="data-card skill-node">
+                    <div class="skill-glyph">⌕</div>
+                    <label>04 / SUPPORT</label>
+                    <h3>Troubleshooting</h3>
+                    <p>Learning to identify and solve basic technical problems.</p>
+                    <div class="tag-group">
+                        <span>PROBLEM SOLVING</span>
+                        <span>TESTING</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- NETWORK LAB MODULE -->
+        <section class="view-module" id="network"
+            data-title="INTERACTIVE NETWORK LAB" data-number="05">
+
+            <div class="module-intro">
+                <small>04 / EXPERIMENTAL ENVIRONMENT</small>
+                <h2>Explore the <em>Network Lab.</em></h2>
+                <p>Select a device to learn about its role in a network.</p>
+            </div>
+
+            <div class="lab-grid">
+
+                <article class="data-card topology-card">
+                    <label>NETWORK TOPOLOGY SIMULATION</label>
+
+                    <div class="topology-map">
+                        <svg viewBox="0 0 600 300">
+                            <path d="M300 55 L130 145 M300 55 L470 145 M130 145 L300 250 M470 145 L300 250"/>
+                        </svg>
+
+                        <button class="node-router selected" data-device="router">
+                            <b>⌁</b><small>ROUTER</small>
+                        </button>
+
+                        <button class="node-switch" data-device="switch">
+                            <b>▦</b><small>SWITCH</small>
+                        </button>
+
+                        <button class="node-server" data-device="server">
+                            <b>▣</b><small>SERVER</small>
+                        </button>
+
+                        <button class="node-pc" data-device="pc">
+                            <b>▱</b><small>PC CLIENT</small>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="data-card device-panel">
+                    <label>DEVICE INFORMATION</label>
+
+                    <div class="device-glyph" id="device-icon">⌁</div>
+                    <small id="device-category">NETWORK DEVICE / 01</small>
+                    <h3 id="device-title">Router</h3>
+
+                    <p id="device-description">
+                        A router connects different networks and directs
+                        data packets toward their destination.
+                    </p>
+
+                    <div class="func-block">
+                        <label>MAIN FUNCTION</label>
+                        <p id="device-function">
+                            Connects networks and forwards data.
+                        </p>
+                    </div>
+
+                    <small id="device-counter">DEVICE 01 / 04</small>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS MODULE -->
+        <section class="view-module" id="projects"
+            data-title="PROJECT ARCHIVE" data-number="06">
+
+            <div class="module-intro">
+                <small>05 / PRACTICAL WORK</small>
+                <h2>Projects & <em>Experiments.</em></h2>
+                <p>Practical tasks completed during my learning journey.</p>
+            </div>
+
+            <div class="data-grid">
+
+                <article class="data-card project-node">
+                    <div class="project-visual">
+                        <b>▣ WINDOWS SERVER ▣</b>
+                    </div>
+
+                    <div class="project-details">
+                        <label>PROJECT 001 · NETWORKING</label>
+                        <h3>DHCP Server Configuration</h3>
+
+                        <p>
+                            Installed the DHCP Server role on Windows Server,
+                            created a scope, and verified that a client
+                            computer successfully received an IP address lease.
+                        </p>
+
+                        <div class="tag-group">
+                            <span>WINDOWS SERVER</span>
+                            <span>DHCP</span>
+                            <span>IP ADDRESSING</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="data-card project-node">
+                    <div class="project-visual">
+                        <b>&lt; HTML / CSS / JS &gt;</b>
+                    </div>
+
+                    <div class="project-details">
+                        <label>PROJECT 002 · WEB DEVELOPMENT</label>
+                        <h3>Personal Portfolio Website</h3>
+
+                        <p>
+                            Designed and developed a responsive portfolio
+                            to introduce myself and present my education,
+                            skills, and projects.
+                        </p>
+
+                        <div class="tag-group">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JAVASCRIPT</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CERTIFICATES MODULE -->
+        <section class="view-module" id="certificates"
+            data-title="CERTIFICATE VAULT" data-number="07">
+
+            <div class="module-intro">
+                <small>06 / ACHIEVEMENTS</small>
+                <h2>My Certificate <em>Vault.</em></h2>
+                <p>Certificates and learning achievements.</p>
+            </div>
+
+            <div class="cert-grid">
+
+                <article class="data-card cert-node">
+                    <img src="Images/CourseraSRV.png" alt="Coursera certificate">
+                    <label>CERTIFICATE 001</label>
+                    <h3>Coursera Certificate</h3>
+                </article>
+
+                <article class="data-card cert-node">
+                    <img src="Images/CourseraSYD1.png" alt="Coursera certificate">
+                    <label>CERTIFICATE 002</label>
+                    <h3>Coursera Certificate</h3>
+                </article>
+
+                <article class="data-card cert-node">
+                    <img src="Images/CourseraSYD2.png" alt="Coursera certificate">
+                    <label>CERTIFICATE 003</label>
+                    <h3>Coursera Certificate</h3>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CONTACT MODULE -->
+        <section class="view-module" id="contact"
+            data-title="CONTACT TERMINAL" data-number="08">
+
+            <div class="module-intro">
+                <small>07 / ESTABLISH CONNECTION</small>
+                <h2>Let's Make a <em>Connection.</em></h2>
+                <p>Feel free to reach out and connect with me.</p>
+            </div>
+
+            <div class="split-layout">
+
+                <article class="data-card contact-node">
+                    <label>CONTACT INFORMATION</label>
+                    <h3>Open Communication Channel</h3>
+
+                    <p>
+                        I am interested in learning, sharing ideas,
+                        and connecting with people who enjoy technology.
+                    </p>
+
+                    <a class="comm-link" id="email-link"
+                       href="mailto:your-email@example.com">
+                        ✉ your-email@example.com
                     </a>
-                </div>
+
+                    <div class="comm-link">
+                        ⌖ Pemagatshel, Bhutan
+                    </div>
+                </article>
+
+                <article class="data-card console-card">
+                    <div class="console-header">● ● ● &nbsp; connection_terminal</div>
+
+                    <div class="console-body">
+                        <p>tandin@portfolio:~$ connect --with-me</p>
+                        <p class="online-indicator">Establishing connection...</p>
+                        <p class="online-indicator">Connection request: welcome!</p>
+
+                        <button class="btn-primary" id="copy-email">
+                            Copy Email Address
+                        </button>
+
+                        <small id="copy-message"></small>
+                    </div>
+                </article>
 
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>
-                &copy; <span id="year"></span> Tandin Wangmo.
-                All rights reserved.
-            </p>
+    <!-- BOTTOM DOCK -->
+    <footer class="system-dock">
+
+        <div class="dock-brand">
+            <b>T.</b>
+            <span>TANDIN OS</span>
         </div>
+
+        <div class="dock-menu">
+            <button class="dock-item active" data-open="home">⌂<small>HOME</small></button>
+            <button class="dock-item" data-open="network">⌁<small>LAB</small></button>
+            <button class="dock-item" data-open="projects">▤<small>WORK</small></button>
+            <button class="dock-item" data-open="contact">✉<small>MAIL</small></button>
+        </div>
+
+        <div class="dock-status">● ALL SYSTEMS NORMAL</div>
+
     </footer>
 
 </body>
